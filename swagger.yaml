@@ -1,0 +1,58 @@
+basePath: /
+info:
+    description: Wikipedia descriptions API
+    title: descriptions API
+    version: 1.0.0
+paths:
+    /page/{title}:
+        get:
+            description: Returns a short description for a Wikipedia page
+            operationId: getDescription
+            parameters:
+                - description: Wikipedia page title
+                  example: '[[["New_York_City"]]]'
+                  in: path
+                  name: title
+                  required: true
+                  type: string
+                  x-go-name: Title
+                - description: Wikipedia site lang code
+                  example: '[[["en"]]]'
+                  in: query
+                  name: lang
+                  type: string
+                  x-go-name: Lang
+                - description: Wikidata description fallback option, If false, then use local description only
+                  example: '[[[true]]]'
+                  in: query
+                  name: fallback
+                  type: string
+                  x-go-name: Lang
+            responses:
+                "200":
+                    $ref: '#/responses/pageResponse'
+                "400":
+                    $ref: '#/responses/Unexpected'
+                    description: error
+                "404":
+                    $ref: '#/responses/Page'
+                    description: not found
+            tags:
+                - description
+produces:
+    - application/json
+responses:
+    pageResponse:
+        description: Description returned in the response
+        headers:
+            description:
+                type: string
+            lang:
+                type: string
+            source:
+                type: string
+            title:
+                type: string
+schemes:
+    - http
+swagger: "2.0"
