@@ -1,4 +1,4 @@
-module github.com/filbertkm/wikiclient
+module github.com/filbertkm/wikiapi
 
 go 1.18
 

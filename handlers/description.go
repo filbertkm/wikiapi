@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/filbertkm/wikiclient/mwclient"
+	"github.com/filbertkm/wikiapi/mwclient"
 	"github.com/gorilla/mux"
 )
 

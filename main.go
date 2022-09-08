@@ -19,7 +19,7 @@ import (
 	"os/signal"
 	"time"
 
-	"github.com/filbertkm/wikiclient/handlers"
+	"github.com/filbertkm/wikiapi/handlers"
 	"github.com/go-openapi/runtime/middleware"
 	"github.com/gorilla/mux"
 )
